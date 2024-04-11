@@ -48,3 +48,10 @@ Is text enough to solve questions 1 and 2?
 ### Things we know from the literature
 
 1. LLMs are able to do NER ([Zhou et al. 2023](https://universal-ner.github.io/)). They can recognize entities such as organization, places, persons, and so on. This should work well with recongizing something like `Course Numbers`, but less so with something longer, such as `Course Description` (they can be a few sentences to few paragraphs long).
+
+### Misc
+
+1. Attention mechanism illustrated, from the [original paper](https://arxiv.org/pdf/1706.03762.pdf):
+
+<img width="714" alt="Screenshot 2024-04-11 at 6 47 03 PM" src="https://github.com/jstonge/catempire/assets/35715881/f79790e2-eb34-4d46-b4ed-7958d56c3914">
+
