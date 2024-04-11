@@ -27,6 +27,11 @@ def get_annotations():
 
         with open("courses.txt", "w") as fout:
             [fout.write(f"{c}\n") for c in out]
-            
+        
+        full_page = json_data[0]['data']['text']
+
+        with open("single_full_page.txt", "w") as fout:
+            fout.write(full_page)
+
 if __name__ == "__main__":
     get_annotations()
