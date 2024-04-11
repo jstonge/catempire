@@ -20,7 +20,11 @@ Consider the following exanmple:
 ```
 C185A. Computational Linguistics I. (4) Requisites: courses 120B, C180, Program in Computing 10B. Recommended: course 165B or 200B, Program in Computing 60. Survey of recent work on natural language processing, including basic syntactic parsing strategies, with brief glimpses of semantic representation, reasoning, and response generation.
 ```
-Is the bigram `Computational Linguistics` have a different representation than how people talk about this field in scientific papers? My gut feeling is that we don't know. In the current data, it sees this `Computational Linguistics` only once. So it doesn't have time to learn a subrepresentation of this bigram. What is perhaps constant is that such bigrams are surrounded by something like a `Course Number` and `Prequisites`. Again, that would mean llama2 needs to learn that something like `C185A` is a course number, and works as such. Can it really does that?
+Is the bigram `Computational Linguistics` have a different representation from its use in, say, scientific papers? My gut feeling is that we don't know. In the current data, it sees this `Computational Linguistics` only once. So it doesn't have time to learn a subrepresentation of this bigram. What is perhaps constant is that such bigrams are surrounded by something like a `Course Number` and `Prequisites`. Again, that would mean llama2 needs to learn that something like `C185A` is a course number, and works as such. Can it really does that? It seems a bit different than predicting the next token in:
+```
+The dog was running in a _____
+```
+The usual insight here is that llama2 can do the previous example easily because it has an internal representation of `cats` and `dogs` in a house. In its training, it might have seen something about 'The cat walking in the bedroom' (example coming from [Bengio et al. 2003](https://www.jmlr.org/papers/volume3/bengio03a/bengio03a.pdf). So it would predict something like `room`.
 
 #### Question 2
 
