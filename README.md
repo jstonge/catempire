@@ -33,3 +33,7 @@ In the [full page](https://github.com/jstonge/catempire/blob/main/single_full_pa
 #### Question 3
 
 Is text enough to solve questions 1 and 2?
+
+### Things we know from the literature
+
+1. LLMs are able to do NER ([Zhou et al. 2023](https://universal-ner.github.io/)). It can recognize entities such as organization, places, persons, and so on. This should work well with the usual NER (maybe like Course Numbers), but less so with something longer, such as Course Description (they can be a few sentences to few paragraphs long).
