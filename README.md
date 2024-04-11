@@ -10,6 +10,7 @@ The goals are the following:
 
 1. Given a list of course objects, are there statistical regularities that would lead FMs to have a different representations of words in the course objects than same words used in non-course catalog contexts?
 1. Given what we know from llama2's transformer architecture, is there a way it could easily learn to delineate course objects from one another?
+1. How does noise might impact LLMs abilities to parse unstructured text into JSON format?
 1. Is text enough to answer the previous questions? What would we gain by somehow introducing the layout that is present in the PDF, e.g. text size, font, overall configuration of the different blocks on the page, etc..
 
 ### Questions in more details
@@ -31,6 +32,16 @@ The usual insight here is that llama2 can do the previous example easily because
 In the [full page](https://github.com/jstonge/catempire/blob/main/single_full_page.txt) in the directory, what statistical patterns could separate one course from another, as well as one course from the following non-course?
 
 #### Question 3
+
+Consider the following examples:
+
+<img width="570" alt="Screenshot 2024-04-11 at 6 18 33 PM" src="https://github.com/jstonge/catempire/assets/35715881/8fa448af-8f1d-4d8f-96d7-b431e17bfea2">
+
+<img width="570" alt="Screenshot 2024-04-11 at 6 20 46 PM" src="https://github.com/jstonge/catempire/assets/35715881/19262f20-fd41-49c4-894a-c2cccdef20d0">
+
+Counting words, the first example has something like 41 words, while the second is more around 50 words. But the token number for the first example is almost half of the second one because of bad parsing. Another different between noisy and clean text is what happens when you look at the number of unique encoded tokens. In the first example, there are 49 types for 59 tokens, while in the second example you get 71 types for 111 tokens. This make obvious sense in this case; single letters appear more often than well composed words, creating redudancy in the types. Is this a general pattern? Could we quantify a badly parsed text by looking at how bad is the ratio types/token ratio, given how [Byte-Pair Encoding](https://aclanthology.org/P16-1162/) works?
+
+#### Question 4
 
 Is text enough to solve questions 1 and 2?
 
