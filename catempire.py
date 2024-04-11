@@ -1,0 +1,1 @@
+words = open('courses.txt', 'r').read().splitlines()
